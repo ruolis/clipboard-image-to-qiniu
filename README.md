@@ -21,7 +21,7 @@
 
 ### 安装
 
-下载项目中的 [clipboard-image-to-qiniu.alfredworkflow](https://github.com/ruolis/clipboard-image-to-qiniu/blob/master/clipboard-image-to-qiniu.alfredworkflow) 到本地，双击安装。
+下载最新的 [release](https://github.com/ruolis/clipboard-image-to-qiniu/releases) 到本地，双击安装。
 
 ### 使用
 
