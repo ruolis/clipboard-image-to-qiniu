@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.ruolis.qiniu</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7DD40BE9-E742-4946-AD3B-7D8AFA5797F4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>098BFF03-28C0-4A3E-A303-22D25DCBA424</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8BD00BDD-1D20-4B25-A0C0-64C5211972F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>ruolis</string>
+	<key>description</key>
+	<string>上传剪贴板的图片到七牛</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>七牛上传</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>qiniu</string>
+				<key>subtext</key>
+				<string>上传剪贴板的图片到七牛</string>
+				<key>text</key>
+				<string>上传剪贴板的图片到七牛</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>快去粘贴看看吧😄</string>
+				<key>title</key>
+				<string>上传七牛成功～</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>098BFF03-28C0-4A3E-A303-22D25DCBA424</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>require_once('app.php');
+
+$type = '{query}';
+
+$config = [
+    'tmp_dir' =&gt; '/tmp',
+    'bucket' =&gt; '',
+    'domain' =&gt; '',
+    'access' =&gt; '',
+    'secret' =&gt; '',
+];
+
+(new App($config))-&gt;run($type);</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8BD00BDD-1D20-4B25-A0C0-64C5211972F5</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"imagefile":"d03b770f105e2b2ca1380fb7d026583da71d3c33.png","title":"PNG","arg":"png","subtitle":"save as .png"},{"imagefile":"62b73ab12b99376123450db33021d1f17b0714b1.png","title":"JPG","arg":"jpg","subtitle":"save as .jpg"},{"imagefile":"7dbc967d92bf50b623f7eea52f4086c7379e848a.png","title":"JPEG","arg":"jpeg","subtitle":"save as .jpeg"},{"imagefile":"abf5d96897b14694c22d0bd4087b87382e8fbca0.png","title":"GIF","arg":"gif","subtitle":"save as .gif"}]</string>
+				<key>keyword</key>
+				<string>oqiniu</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>请选择上传之后的文件扩展名</string>
+				<key>title</key>
+				<string>上传剪贴板图片到七牛</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>7DD40BE9-E742-4946-AD3B-7D8AFA5797F4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>借助 Alfred Workflow 将剪贴板中的图片上传到七牛，并返回 Markdown 格式的图片链接。</string>
+	<key>uidata</key>
+	<dict>
+		<key>098BFF03-28C0-4A3E-A303-22D25DCBA424</key>
+		<dict>
+			<key>xpos</key>
+			<integer>660</integer>
+			<key>ypos</key>
+			<integer>85</integer>
+		</dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>7DD40BE9-E742-4946-AD3B-7D8AFA5797F4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>215</integer>
+		</dict>
+		<key>8BD00BDD-1D20-4B25-A0C0-64C5211972F5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>665</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>145</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.0.1</string>
+	<key>webaddress</key>
+	<string>https://ruoils.me</string>
+</dict>
+</plist>
